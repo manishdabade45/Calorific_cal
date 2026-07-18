@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorific-Value calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calorific-Value calculator</h1>
+        <p>Calculate GCV and NCV values for Bomb and Boys Calorimeters</p>
+    </header>
+
+    <div class="container">
+        <div class="calculator">
+            <h2>Choose Calculation Type:</h2>
+            <div class="options">
+                <button class="option-btn" data-form="form1">GCV of Bomb Calorimeter</button>
+                <button class="option-btn" data-form="form2">Corrected GCV of Bomb Calorimeter</button>
+                <button class="option-btn" data-form="form3">NCV of Bomb Calorimeter</button>
+                <button class="option-btn" data-form="form4">GCV of Boys Calorimeter</button>
+                <button class="option-btn" data-form="form5">NCV of Boys Calorimeter</button>
+                <button class="option-btn" data-form="form6">NCV of Boys Calorimeter (GCV Given)</button>
+            </div>
+
+            <!-- Form 1: GCV of Bomb Calorimeter -->
+            <form id="form1" class="calculation-form">
+                <div class="form-group">
+                    <label for="waterMass1">Mass of Water in Calorimeter (g):</label>
+                    <input type="number" id="waterMass1" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="waterEquivalent1">Water Equivalent (g):</label>
+                    <input type="number" id="waterEquivalent1" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="temperatureRise1">Temperature Rise (°C):</label>
+                    <input type="number" id="temperatureRise1" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="fuelMass1">Mass of Fuel (g):</label>
+                    <input type="number" id="fuelMass1" step="0.0001" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Calculate</button>
+                    <button type="reset" class="btn reset-btn">Reset</button>
+                </div>
+            </form>
+
+            <!-- Form 2: Corrected GCV of Bomb Calorimeter -->
+            <form id="form2" class="calculation-form">
+                <div class="form-group">
+                    <label for="waterMass2">Mass of Water (g):</label>
+                    <input type="number" id="waterMass2" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="waterEquivalent2">Water Equivalent (g):</label>
+                    <input type="number" id="waterEquivalent2" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="temperatureRise2">Temperature Rise (°C):</label>
+                    <input type="number" id="temperatureRise2" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="acidCorrection">Acid Correction (a):</label>
+                    <input type="number" id="acidCorrection" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="coolingCorrection">Cooling Correction (t.dt):</label>
+                    <input type="number" id="coolingCorrection" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="fusewireCorrection">Fuse Wire Correction (f):</label>
+                    <input type="number" id="fusewireCorrection" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="fuelMass2">Mass of Fuel (g):</label>
+                    <input type="number" id="fuelMass2" step="0.0001" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Calculate</button>
+                    <button type="reset" class="btn reset-btn">Reset</button>
+                </div>
+            </form>
+
+            <!-- Form 3: NCV of Bomb Calorimeter -->
+            <form id="form3" class="calculation-form">
+                <div class="form-group">
+                    <label for="gcv3">GCV (cal/g):</label>
+                    <input type="number" id="gcv3" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="hydrogenPercentage">Hydrogen Percentage in Fuel (%):</label>
+                    <input type="number" id="hydrogenPercentage" step="0.01" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Calculate</button>
+                    <button type="reset" class="btn reset-btn">Reset</button>
+                </div>
+            </form>
+
+            <!-- Form 4: GCV of Boys Calorimeter -->
+            <form id="form4" class="calculation-form">
+                <div class="form-group">
+                    <label for="waterMass4">Mass of Water (g):</label>
+                    <input type="number" id="waterMass4" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="temperatureRise4">Temperature Rise (°C):</label>
+                    <input type="number" id="temperatureRise4" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="fuelVolume4">Volume of Fuel (m³):</label>
+                    <input type="number" id="fuelVolume4" step="0.0001" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Calculate</button>
+                    <button type="reset" class="btn reset-btn">Reset</button>
+                </div>
+            </form>
+
+            <!-- Form 5: NCV of Boys Calorimeter -->
+            <form id="form5" class="calculation-form">
+                <div class="form-group">
+                    <label for="waterMass5">Mass of Water (g):</label>
+                    <input type="number" id="waterMass5" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="temperatureRise5">Temperature Rise (°C):</label>
+                    <input type="number" id="temperatureRise5" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="steamMass5">Mass of Steam (g):</label>
+                    <input type="number" id="steamMass5" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="latentHeat5">Latent Heat of Fusion of Water (cal/g):</label>
+                    <input type="number" id="latentHeat5" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="fuelVolume5">Volume of Fuel (m³):</label>
+                    <input type="number" id="fuelVolume5" step="0.0001" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Calculate</button>
+                    <button type="reset" class="btn reset-btn">Reset</button>
+                </div>
+            </form>
+
+            <!-- Form 6: NCV of Boys Calorimeter (GCV Given) -->
+            <form id="form6" class="calculation-form">
+                <div class="form-group">
+                    <label for="gcv6">GCV of Boys Calorimeter (Kcal/m³):</label>
+                    <input type="number" id="gcv6" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="steamMass6">Mass of Steam (g):</label>
+                    <input type="number" id="steamMass6" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="latentHeat6">Latent Heat of Fusion of Water (cal/g):</label>
+                    <input type="number" id="latentHeat6" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="fuelVolume6">Volume of Fuel (m³):</label>
+                    <input type="number" id="fuelVolume6" step="0.0001" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Calculate</button>
+                    <button type="reset" class="btn reset-btn">Reset</button>
+                </div>
+            </form>
+
+            <div class="result">
+                <h3>Result:</h3>
+                <p class="result-value" id="resultValue"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made by Swarup Bhadule, Manish Dabade and Divya Wankhade</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
