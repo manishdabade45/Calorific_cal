@@ -2,6 +2,8 @@
 
 An interactive, user-friendly web application designed to calculate the **Gross Calorific Value (GCV)** and **Net Calorific Value (NCV)** of fuels using **Bomb Calorimeter** and **Boys Calorimeter** experimental data. 
 
+🌐 **Live Demo**: [calorificvaluecalculator.netlify.app](https://calorificvaluecalculator.netlify.app/)
+
 This project was developed as an **Internal College Internship Task** by first-year engineering students to simplify and automate fuel analysis calculations in Chemistry and Thermodynamics.
 
 ---
